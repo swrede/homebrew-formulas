@@ -18,8 +18,9 @@ class Rsb < Formula
   def install
     # ENV.x11 # if your formula requires any X11 headers
     # ENV.j1  # if your formula's build system can't parallelize
+    args = std_cmake_args + %W[-DBUILD_SPREAD_TRANSPORT=OFF]
 
-    system "cmake", ".", *std_cmake_args
+    system "cmake", ".", *args
     system "make install" # if this fails, try separate make/make install steps
   end
 
