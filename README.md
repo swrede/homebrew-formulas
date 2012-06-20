@@ -24,4 +24,4 @@ You can also install via URL:
 
 Docs
 ----
-`brew help`, `man brew`, or the Homebrew [wiki][].
+`brew help`, `man brew`, or the Homebrew [wiki](https://github.com/mxcl/homebrew/wiki).
