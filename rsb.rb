@@ -6,7 +6,7 @@ require 'formula'
 class Rsb < Formula
   homepage 'https://toolkit.cit-ec.uni-bielefeld.de/components/generic/robotics-service-bus'
   url 'https://ci.cor-lab.de/view/RSC/job/rsb-cpp-0.6-src/lastSuccessfulBuild/label=ubuntu_precise_64bit/artifact/rsb-0.6-src.tar.gz'
-  sha1 '230f251b5a6ecfbaf16f67122fc834cc88bebd72'
+  sha1 '70dd076940ad02ec5323b0dc7590e703b299e12b'
 
   head 'https://code.cor-lab.org/svn/rsb/trunk/cpp/core', :using => :svn
 
