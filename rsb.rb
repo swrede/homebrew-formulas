@@ -5,8 +5,8 @@ require 'formula'
 
 class Rsb < Formula
   homepage 'https://toolkit.cit-ec.uni-bielefeld.de/components/generic/robotics-service-bus'
-  url 'https://code.cor-lab.org/git/rsb.git.cpp', :using => :git, :tag => '0.6'
-  version '0.6'
+  url 'https://code.cor-lab.org/git/rsb.git.cpp', :using => :git, :tag => '0.7'
+  version '0.7'
   head 'https://code.cor-lab.org/git/rsb.git.cpp', :using => :git
 
   depends_on 'cmake' => :build
