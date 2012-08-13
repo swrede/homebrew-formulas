@@ -5,10 +5,9 @@ require 'formula'
 
 class Rsb < Formula
   homepage 'https://toolkit.cit-ec.uni-bielefeld.de/components/generic/robotics-service-bus'
-  url 'https://ci.cor-lab.de/view/RSC/job/rsb-cpp-0.6-src/lastSuccessfulBuild/label=ubuntu_precise_64bit/artifact/rsb-0.6-src.tar.gz'
-  sha1 '70dd076940ad02ec5323b0dc7590e703b299e12b'
-
-  head 'https://code.cor-lab.org/svn/rsb/trunk/cpp/core', :using => :svn
+  url 'https://code.cor-lab.org/git/rsb.git.cpp', :using => :git, :tag => '0.6'
+  version '0.6'
+  head 'https://code.cor-lab.org/git/rsb.git.cpp', :using => :git
 
   depends_on 'cmake' => :build
   depends_on 'boost'

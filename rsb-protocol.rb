@@ -4,9 +4,10 @@ require 'formula'
 # PLEASE REMOVE ALL GENERATED COMMENTS BEFORE SUBMITTING YOUR PULL REQUEST!
 
 class RsbProtocol < Formula
-  homepage ''
-  url 'https://ci.cor-lab.de/view/RSB/job/rsb-protocol-0.6-src/6/label=ubuntu_precise_64bit/artifact/rsb-protocol-0.6-src.tar.gz'
-  sha1 'd353da2d7cf79dda2ef177706173f417ade00de7'
+  homepage 'https://code.cor-lab.org/projects/rsb'
+  url 'https://code.cor-lab.org/git/rsb.git.protocol', :using => :git, :tag => '0.6'
+  version '0.6'
+  head 'https://code.cor-lab.org/git/rsb.git.protocol', :using => :git
 
   depends_on 'cmake' => :build
   depends_on 'protobuf'
