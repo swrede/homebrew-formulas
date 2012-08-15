@@ -5,7 +5,7 @@ require 'formula'
 
 class RsbProtocol < Formula
   homepage 'https://code.cor-lab.org/projects/rsb'
-  url 'https://code.cor-lab.org/git/rsb.git.protocol', :using => :git, :tag => '0.7'
+  url 'https://code.cor-lab.org/git/rsb.git.protocol', :using => :git, :branch => '0.7'
   version '0.7'
   head 'https://code.cor-lab.org/git/rsb.git.protocol', :using => :git
 
