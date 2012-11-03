@@ -9,6 +9,8 @@ class Rsb < Formula
   version '0.7'
   head 'https://code.cor-lab.org/git/rsb.git.cpp', :using => :git
 
+  option :universal
+
   depends_on 'cmake' => :build
   depends_on 'boost'
   depends_on 'rsc' 
@@ -17,6 +19,7 @@ class Rsb < Formula
   def install
     # ENV.x11 # if your formula requires any X11 headers
     # ENV.j1  # if your formula's build system can't parallelize
+    ENV.universal_binary if build.universal?
     args = std_cmake_args + %W[-DBUILD_SPREAD_TRANSPORT=OFF]
 
     system "cmake", ".", *args

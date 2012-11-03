@@ -1,13 +1,12 @@
 require 'formula'
 
-# Documentation: https://github.com/mxcl/homebrew/wiki/Formula-Cookbook
-# PLEASE REMOVE ALL GENERATED COMMENTS BEFORE SUBMITTING YOUR PULL REQUEST!
-
 class RsbProtocol < Formula
   homepage 'https://code.cor-lab.org/projects/rsb'
   url 'https://code.cor-lab.org/git/rsb.git.protocol', :using => :git, :branch => '0.7'
   version '0.7'
   head 'https://code.cor-lab.org/git/rsb.git.protocol', :using => :git
+
+  option :universal
 
   depends_on 'cmake' => :build
   depends_on 'protobuf'
@@ -15,6 +14,7 @@ class RsbProtocol < Formula
   def install
     # ENV.x11 # if your formula requires any X11 headers
     # ENV.j1  # if your formula's build system can't parallelize
+    ENV.universal_binary if build.universal?
 
     system "cmake", ".", *std_cmake_args
     system "make install" # if this fails, try separate make/make install steps
