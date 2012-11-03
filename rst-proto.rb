@@ -1,13 +1,12 @@
 require 'formula'
 
-# Documentation: https://github.com/mxcl/homebrew/wiki/Formula-Cookbook
-# PLEASE REMOVE ALL GENERATED COMMENTS BEFORE SUBMITTING YOUR PULL REQUEST!
-
 class RstProto < Formula
   homepage 'https://toolkit.cit-ec.uni-bielefeld.de/components/generic/robotics-system-types'
   url 'https://code.cor-lab.de/git/rst.git.proto.git', :using => :git, :branch => '0.7'
   version '0.7'
   head 'https://code.cor-lab.de/git/rst.git.proto.git', :using => :git
+
+  option :universal
 
   depends_on 'cmake' => :build
   depends_on 'rsc'
@@ -16,6 +15,7 @@ class RstProto < Formula
   def install
     # ENV.x11 # if your formula requires any X11 headers
     # ENV.j1  # if your formula's build system can't parallelize
+    ENV.universal_binary if build.universal?
 
     system "cmake", ".", *std_cmake_args
     system "make install" # if this fails, try separate make/make install steps

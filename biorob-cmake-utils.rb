@@ -1,18 +1,18 @@
 require 'formula'
 
-# Documentation: https://github.com/mxcl/homebrew/wiki/Formula-Cookbook
-# PLEASE REMOVE ALL GENERATED COMMENTS BEFORE SUBMITTING YOUR PULL REQUEST!
-
 class BiorobCmakeUtils < Formula
   url 'https://ponyo.epfl.ch/cgit/index.cgi/biorob-cmake-utils.git/', :using => :git
   version '0.2.2'
-  #head 'https://code.cor-lab.org/git/rsb.git.cpp', :using => :git
+  head 'https://ponyo.epfl.ch/cgit/index.cgi/biorob-cmake-utils.git/', :using => :git
+
+  option :universal
 
   depends_on 'cmake' => :build
 
   def install
     # ENV.x11 # if your formula requires any X11 headers
     # ENV.j1  # if your formula's build system can't parallelize
+    ENV.universal_binary if build.universal?
     args = std_cmake_args
 
     system "cmake", ".", *args
