@@ -1,20 +1,21 @@
 require 'formula'
 
-# Documentation: https://github.com/mxcl/homebrew/wiki/Formula-Cookbook
-# PLEASE REMOVE ALL GENERATED COMMENTS BEFORE SUBMITTING YOUR PULL REQUEST!
-
 class Nemomath < Formula
   homepage 'https://toolkit.cit-ec.uni-bielefeld.de/components/generic/nemomath'
   head 'https://code.cor-lab.org/svn/nemomath/trunk/nemomath', :using => :svn
 
+  option :universal
+
   depends_on 'cmake' => :build
-  depends_on 'eigen2'
+  depends_on 'eigen'
 
   def install
     # ENV.x11 # if your formula requires any X11 headers
     # ENV.j1  # if your formula's build system can't parallelize
+    ENV.universal_binary if build.universal?
+    args = std_cmake_args + %W[-DUSE_CPP_0X=0 -DBREW_BUILD=1]
 
-    system "cmake", ".", *std_cmake_args
+    system "cmake", ".", *args
     system "make install" # if this fails, try separate make/make install steps
   end
 
