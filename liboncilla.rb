@@ -1,13 +1,12 @@
 require 'formula'
 
-# Documentation: https://github.com/mxcl/homebrew/wiki/Formula-Cookbook
-# PLEASE REMOVE ALL GENERATED COMMENTS BEFORE SUBMITTING YOUR PULL REQUEST!
-
 class Liboncilla < Formula
-  homepage 'https://toolkit.cit-ec.uni-bielefeld.de/components/generic/robotics-service-bus'
+  homepage 'https://toolkit.cit-ec.uni-bielefeld.de'
   url 'https://redmine.amarsi-project.eu/git/quaddrivers.git', :using => :git
   version '0.2'
-  #head 'https://code.cor-lab.org/git/rsb.git.cpp', :using => :git
+  head 'https://redmine.amarsi-project.eu/git/quaddrivers.git', :using => :git
+  
+  option :universal
 
   depends_on 'cmake' => :build
   depends_on 'rci' 
@@ -15,6 +14,7 @@ class Liboncilla < Formula
   def install
     # ENV.x11 # if your formula requires any X11 headers
     # ENV.j1  # if your formula's build system can't parallelize
+    ENV.universal_binary if build.universal?
     args = std_cmake_args
 
     system "cmake", ".", *args
