@@ -1,14 +1,14 @@
 require 'formula'
 
-class Rci < Formula
-  homepage 'https://toolkit.cit-ec.uni-bielefeld.de/components/generic/robot-control-interface'
-  head 'https://code.cor-lab.org/svn/rci/trunk/rci', :using => :svn
+class Cca < Formula
+  homepage 'https://toolkit.cit-ec.uni-bielefeld.de'
+  head 'https://redmine.amarsi-project.eu/svn/cca/trunk/cca', :using => :svn
 
   option :universal
 
   depends_on 'cmake' => :build
   depends_on 'boost'
-  depends_on 'nemomath'
+  depends_on 'rsb'
 
   def install
     # ENV.x11 # if your formula requires any X11 headers
