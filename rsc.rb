@@ -1,14 +1,16 @@
 require 'formula'
 
-# Documentation: https://github.com/mxcl/homebrew/wiki/Formula-Cookbook
-# PLEASE REMOVE ALL GENERATED COMMENTS BEFORE SUBMITTING YOUR PULL REQUEST!
-
 class Rsc < Formula
   homepage 'https://toolkit.cit-ec.uni-bielefeld.de/components/generic/robotics-systems-commons'
   url 'https://code.cor-lab.org/git/rsc.git', :using => :git, :branch => '0.7'
   version '0.7'
   head 'https://code.cor-lab.org/git/rsc.git', :using => :git
 
+#  devel do
+#    url 'https://code.cor-lab.org/git/rsc.git', :using => :git, :branch => 'wip-commandlineconfig'
+#    version '0.9'
+#  end
+  
   option :universal
 
   depends_on 'cmake' => :build
