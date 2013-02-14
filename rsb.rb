@@ -14,6 +14,7 @@ class Rsb < Formula
 
   depends_on 'cmake' => :build
   depends_on 'boost'
+  depends_on 'spread'
   depends_on 'rsc' 
   depends_on 'rsb-protocol'
 
@@ -23,11 +24,11 @@ class Rsb < Formula
     ENV.universal_binary if build.universal?
     args = std_cmake_args
 
-    if build.include? 'with-spread'
-      args << "-DBUILD_SPREAD_TRANSPORT=ON" 
-    else
-      args << "-DBUILD_SPREAD_TRANSPORT=OFF" 
-    end
+#    if build.include? 'with-spread'
+#      args << "-DBUILD_SPREAD_TRANSPORT=ON" 
+#    else
+#      args << "-DBUILD_SPREAD_TRANSPORT=OFF" 
+#    end
     
     system "cmake", ".", *args
     system "make install" # if this fails, try separate make/make install steps
