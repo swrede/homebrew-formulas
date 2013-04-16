@@ -26,7 +26,7 @@ class Spread < Formula
     system "make"
     # Even though we specified HOMEBREW_PREFIX for configure,
     # we still want to install it in the Cellar location.
-    system "make", "install", "prefix=#{prefix}"     
+    system "make", "-j1", "install", "prefix=#{prefix}"     
     File.symlink("#{prefix}/sbin/spread", "#{prefix}/bin/spread") 
     
   end
