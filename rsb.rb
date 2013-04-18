@@ -20,7 +20,7 @@ class Rsb < Formula
     ENV.universal_binary if build.universal?
     args = std_cmake_args
 
-    if build.include? '--without-spread'
+    if not build.with? 'spread'
       args << "-DBUILD_SPREAD_TRANSPORT=OFF" 
     end
     
