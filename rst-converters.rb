@@ -9,7 +9,9 @@ class RstConverters < Formula
   option :universal
 
   depends_on 'cmake' => :build
-  depends_on 'rsb'
+  depends_on 'spread' => :optional
+  #FIX-ME: https://github.com/swrede/homebrew-formulas/issues/8
+  #depends_on 'rsb' 
   depends_on 'rst-proto'
 
   def install
