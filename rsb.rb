@@ -7,13 +7,10 @@ class Rsb < Formula
   head 'https://code.cor-lab.org/git/rsb.git.cpp', :using => :git
 
   option :universal
-  option 'no-spread', 'Disable Spread transport'
 
   depends_on 'cmake' => :build
   depends_on 'boost'
-  if not build.include? 'no-spread'  
-     depends_on 'spread'
-  end
+  depends_on 'spread' => :recommended
   depends_on 'rsc' 
   depends_on 'rsb-protocol'
 
@@ -23,7 +20,7 @@ class Rsb < Formula
     ENV.universal_binary if build.universal?
     args = std_cmake_args
 
-    if build.include? 'no-spread'
+    if build.include? '--without-spread'
       args << "-DBUILD_SPREAD_TRANSPORT=OFF" 
     end
     
