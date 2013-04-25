@@ -10,6 +10,7 @@ class Liboncilla < Formula
 
   depends_on 'cmake' => :build
   depends_on 'rci' 
+  depends_on 'biorob-cpp'
 
   def install
     # ENV.x11 # if your formula requires any X11 headers
