@@ -18,9 +18,8 @@ class RstConverters < Formula
   def install
     # ENV.x11 # if your formula requires any X11 headers
     # ENV.j1  # if your formula's build system can't parallelize
-    ENV.universal_binary if build.universal?
-
-   
+    ENV.universal_binary if build.universal?  
+    
     system "cmake", "./cpp", *std_cmake_args
     system "make install" # if this fails, try separate make/make install steps
   end
