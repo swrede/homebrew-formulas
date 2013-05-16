@@ -2,39 +2,26 @@ require 'formula'
 
 class Spread < Formula
   homepage 'http://www.spread.org/'
-  url 'https://code.cor-lab.de/svn/packaging/spread/trunk', :using => :svn
-  version '4.1'
+  url 'http://www.spread.org/download/spread-src-4.2.0.tar.gz?FILE=spread-src-4.2.0.tar.gz&name=McTester&company=homebrew&email=foo@example.org'
+  version '4.2.0'
 
   option :universal
-    
-  def patches 
-    system "tar", "xzf", "spread_4.1.0.orig.tar.gz", "--strip-components=1"
-    # fixes multiple problems
-    { :p1 => 
-      [ "spread-4.1.0/debian/patches/max-messages.patch",
-        "spread-4.1.0/debian/patches/badger-timeout.patch" 
-      ] }
-  end
-    
+
   def install
-    # ENV.x11 # if your formula requires any X11 headers
-    # ENV.j1  # if your formula's build system can't parallelize
+    ENV.j1
     ENV.universal_binary if build.universal?
-   
+
     system "./configure", "--prefix=#{prefix}"
-  
+
     system "make"
+    
     # Even though we specified HOMEBREW_PREFIX for configure,
     # we still want to install it in the Cellar location.
     system "make", "-j1", "install", "prefix=#{prefix}"     
     File.symlink("#{prefix}/sbin/spread", "#{prefix}/bin/spread") 
-    
   end
 
   def test
-    # This test will fail and we won't accept that! It's enough to just replace
-    # "false" with the main program this formula installs, but it'd be nice if you
-    # were more thorough. Run the test with `brew test rsc`.
-    system "false"
+    system "spuser"
   end
 end
