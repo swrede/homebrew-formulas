@@ -8,6 +8,12 @@ class Spread < Formula
 
   option :universal
 
+  def patches
+    [
+      "https://code.cor-lab.org/projects/packaging/repository/raw/spread/trunk/spread-4.3.0/debian/patches/high-port-fix.patch"
+    ]
+  end
+
   def install
     ENV.j1
     ENV.universal_binary if build.universal?
