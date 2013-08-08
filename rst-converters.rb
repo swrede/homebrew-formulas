@@ -2,8 +2,8 @@ require 'formula'
 
 class RstConverters < Formula
   homepage 'https://toolkit.cit-ec.uni-bielefeld.de/components/generic/robotics-system-types'
-  url 'https://code.cor-lab.de/git/rst.git.converters.git', :using => :git, :branch => '0.7'
-  version '0.7'
+  url 'https://code.cor-lab.de/git/rst.git.converters.git', :using => :git, :branch => '0.9'
+  version '0.9'
   head 'https://code.cor-lab.de/git/rst.git.converters.git', :using => :git
 
   option :universal
@@ -11,8 +11,7 @@ class RstConverters < Formula
   depends_on 'cmake' => :build
   depends_on 'rci' => :recommended
   depends_on 'opencv' => :optional
-  #FIX-ME: https://github.com/swrede/homebrew-formulas/issues/8
-  #depends_on 'rsb' 
+  depends_on 'rsb' 
   depends_on 'rst-proto'
 
   def install

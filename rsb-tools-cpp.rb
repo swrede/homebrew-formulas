@@ -5,8 +5,8 @@ require 'formula'
 
 class RsbToolsCpp < Formula
   homepage 'https://toolkit.cit-ec.uni-bielefeld.de/components/generic/robotics-service-bus'
-  url 'https://code.cor-lab.org/git/rsb.git.tools-cpp', :using => :git, :branch => '0.7'
-  version '0.7'
+  url 'https://code.cor-lab.org/git/rsb.git.tools-cpp', :using => :git, :branch => '0.9'
+  version '0.9'
   head 'https://code.cor-lab.org/git/rsb.git.tools-cpp', :using => :git
 
   option :universal
@@ -21,7 +21,7 @@ class RsbToolsCpp < Formula
     ENV.universal_binary if build.universal?
     args = std_cmake_args 
 
-    system "cmake", ".", *args
+    system "cmake", ".", "-DBUILD_TESTS=OFF", *args
     system "make install" # if this fails, try separate make/make install steps
   end
 
