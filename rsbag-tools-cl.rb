@@ -5,7 +5,6 @@ class RsbagToolsCl < Formula
   url 'https://ci.cor-lab.org/view/rsb-0.9/job/rsbag-tools-cl-0.9-macos/label=MAC_OS_lion_64bit/lastSuccessfulBuild/artifact/build/bag', :using => :nounzip
   version '0.9'
   head 'https://ci.cor-lab.org/view/rsb-trunk/job/rsbag-tools-cl-trunk-macos/label=MAC_OS_lion_64bit/lastSuccessfulBuild/artifact/build/bag', :using => :nounzip
-  sha1 '07c09b594514f65419fd24795a2167a7b262caef'
 
   def install
     bin.install 'bag'
