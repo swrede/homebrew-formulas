@@ -11,14 +11,17 @@ class RstProto < Formula
   depends_on 'cmake' => :build
   depends_on 'rsc'
   depends_on 'protobuf'
+  depends_on :python
+  depends_on :python => ['google.protobuf' => 'protobuf']
 
   def install
     # ENV.x11 # if your formula requires any X11 headers
     # ENV.j1  # if your formula's build system can't parallelize
     ENV.universal_binary if build.universal?
 
-    system "cmake", ".", "-DBUILD_PYTHON=OFF", "-DBUILD_JAVA=OFF", "-DBUILD_MATLAB=OFF", *std_cmake_args
+    system "cmake", ".", "-DPYTHON_EXECUTABLE=#{python.binary}", "-DBUILD_JAVA=OFF", "-DBUILD_MATLAB=OFF", *std_cmake_args
     system "make install" # if this fails, try separate make/make install steps
+    rm "#{prefix}/lib/python2.7/site-packages/site.py"
   end
 
   def test
