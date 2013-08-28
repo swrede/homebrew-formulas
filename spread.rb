@@ -2,11 +2,17 @@ require 'formula'
 
 class Spread < Formula
   homepage 'http://www.spread.org/'
-  url 'http://www.spread.org/download/spread-src-4.2.0.tar.gz?FILE=spread-src-4.2.0.tar.gz&name=McTester&company=homebrew&email=foo@example.org'
-  sha1 '6052d39610ec27e856d601310f5b7a7b982d02dc'
-  version '4.2.0'
+  url 'http://www.spread.org/download/spread-src-4.3.0.tar.gz?FILE=spread-src-4.3.0.tar.gz&name=McTester&company=homebrew&email=foo@example.org'
+  sha1 '6bba730d45da3211846051034649713e02a2571e'
+  version '4.3.0'
 
   option :universal
+
+  def patches
+    [
+      "https://code.cor-lab.org/projects/packaging/repository/raw/spread/trunk/spread-4.3.0/debian/patches/high-port-fix.patch"
+    ]
+  end
 
   def install
     ENV.j1
