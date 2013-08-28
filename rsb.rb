@@ -23,7 +23,8 @@ class Rsb < Formula
       -DCMAKE_INSTALL_PREFIX='#{HOMEBREW_PREFIX}'
     ]
     system "cmake", ".", *args
-    system "make DESTDIR=#{prefix} install" # if this fails, try separate make/make install steps
+    system "make DESTDIR=#{prefix} install"
+    mv Dir["#{prefix}/usr/local/*"], "#{prefix}"
   end
 
   def test
