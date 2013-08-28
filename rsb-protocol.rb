@@ -2,14 +2,15 @@ require 'formula'
 
 class RsbProtocol < Formula
   homepage 'https://code.cor-lab.org/projects/rsb'
-  url 'https://code.cor-lab.org/git/rsb.git.protocol', :using => :git, :branch => '0.7'
-  version '0.7'
+  url 'https://code.cor-lab.org/git/rsb.git.protocol', :using => :git, :branch => '0.9'
+  version '0.9'
   head 'https://code.cor-lab.org/git/rsb.git.protocol', :using => :git
 
   option :universal
 
   depends_on 'cmake' => :build
   depends_on 'protobuf'
+  depends_on 'rsc' => :build
 
   def install
     # ENV.x11 # if your formula requires any X11 headers

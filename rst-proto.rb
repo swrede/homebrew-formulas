@@ -2,8 +2,8 @@ require 'formula'
 
 class RstProto < Formula
   homepage 'https://toolkit.cit-ec.uni-bielefeld.de/components/generic/robotics-system-types'
-  url 'https://code.cor-lab.de/git/rst.git.proto.git', :using => :git, :branch => '0.7'
-  version '0.7'
+  url 'https://code.cor-lab.de/git/rst.git.proto.git', :using => :git, :branch => '0.9'
+  version '0.9'
   head 'https://code.cor-lab.de/git/rst.git.proto.git', :using => :git
 
   option :universal
@@ -17,7 +17,7 @@ class RstProto < Formula
     # ENV.j1  # if your formula's build system can't parallelize
     ENV.universal_binary if build.universal?
 
-    system "cmake", ".", *std_cmake_args
+    system "cmake", ".", "-DBUILD_PYTHON=OFF", "-DBUILD_JAVA=OFF", "-DBUILD_MATLAB=OFF", *std_cmake_args
     system "make install" # if this fails, try separate make/make install steps
   end
 
