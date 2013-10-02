@@ -2,6 +2,8 @@ require 'formula'
 
 class Rci < Formula
   homepage 'https://toolkit.cit-ec.uni-bielefeld.de/components/generic/robot-control-interface'
+  url 'https://code.cor-lab.org/svn/rci/tags/rci-0.4/rci', :using => :svn
+  version '0.4'
   head 'https://code.cor-lab.org/svn/rci/trunk/rci', :using => :svn
 
   option :universal
