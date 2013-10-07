@@ -2,6 +2,8 @@ require 'formula'
 
 class Nemomath < Formula
   homepage 'https://toolkit.cit-ec.uni-bielefeld.de/components/generic/nemomath'
+  url 'https://code.cor-lab.org/svn/nemomath/tags/nemomath-0.4.0/nemomath', :using => :svn
+  version '0.4.0'
   head 'https://code.cor-lab.org/svn/nemomath/trunk/nemomath', :using => :svn
 
   option :universal
