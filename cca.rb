@@ -2,7 +2,9 @@ require 'formula'
 
 class Cca < Formula
   homepage 'https://toolkit.cit-ec.uni-bielefeld.de'
-  head 'https://redmine.amarsi-project.eu/svn/cca/trunk/cca', :using => :svn
+  url 'https://code.cor-lab.org/svn/cca/tags/cca-0.4/cca', :using => :svn
+  version '0.4'
+  head 'https://code.cor-lab.org/svn/cca/trunk/cca/cca', :using => :svn
 
   option :universal
 
