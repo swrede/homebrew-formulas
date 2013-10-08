@@ -10,6 +10,7 @@ class Cca < Formula
 
   depends_on 'cmake' => :build
   depends_on 'boost'
+  depends_on 'nemomath'
   depends_on 'rsb'
 
   def install
