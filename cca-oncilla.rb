@@ -2,8 +2,8 @@ require 'formula'
 
 class CcaOncilla < Formula
   homepage 'https://toolkit.cit-ec.uni-bielefeld.de'
-  url 'https://redmine.amarsi-project.eu/git/oncilla-cca.git', :using => :git
   version '0.4'
+  url 'https://redmine.amarsi-project.eu/git/oncilla-cca.git', :using => :git
   head 'https://redmine.amarsi-project.eu/git/oncilla-cca.git', :using => :git
 
   option :universal

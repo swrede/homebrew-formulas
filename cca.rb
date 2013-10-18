@@ -12,6 +12,7 @@ class Cca < Formula
   depends_on 'boost'
   depends_on 'nemomath'
   depends_on 'rsb'
+  depends_on 'rst-proto'
 
   def install
     # ENV.x11 # if your formula requires any X11 headers
