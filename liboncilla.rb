@@ -3,7 +3,7 @@ require 'formula'
 class Liboncilla < Formula
   homepage 'https://toolkit.cit-ec.uni-bielefeld.de'
   url 'https://redmine.amarsi-project.eu/git/quaddrivers.git', :using => :git
-  version '0.2'
+  version '0.3'
   head 'https://redmine.amarsi-project.eu/git/quaddrivers.git', :using => :git
   
   option :universal
