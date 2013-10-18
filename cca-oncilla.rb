@@ -2,6 +2,8 @@ require 'formula'
 
 class CcaOncilla < Formula
   homepage 'https://toolkit.cit-ec.uni-bielefeld.de'
+  url 'https://redmine.amarsi-project.eu/git/oncilla-cca.git', :using => :git
+  version '0.4'
   head 'https://redmine.amarsi-project.eu/git/oncilla-cca.git', :using => :git
 
   option :universal
@@ -10,6 +12,7 @@ class CcaOncilla < Formula
   depends_on 'boost'
   depends_on 'cca'
   depends_on 'liboncilla'
+  depends_on 'rst-converters'
 
   def install
     # ENV.x11 # if your formula requires any X11 headers
