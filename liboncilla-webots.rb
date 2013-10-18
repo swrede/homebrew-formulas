@@ -3,7 +3,7 @@ require 'formula'
 class LiboncillaWebots < Formula
   homepage 'https://toolkit.cit-ec.uni-bielefeld.de'
   url 'https://redmine.amarsi-project.eu/git/liboncilla-webots.git', :using => :git
-  version '0.1.1'
+  version '0.2'
   head 'https://redmine.amarsi-project.eu/git/liboncilla-webots.git', :using => :git 
   #, :branch => 'macos-workarounds'
 
