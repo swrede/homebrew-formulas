@@ -21,7 +21,7 @@ class RstProto < Formula
 
     system "cmake", ".", "-DPYTHON_EXECUTABLE=#{python.binary}", "-DBUILD_JAVA=OFF", "-DBUILD_MATLAB=OFF", *std_cmake_args
     system "make install" # if this fails, try separate make/make install steps
-    rm "#{prefix}/lib/python2.7/site-packages/site.py"
+    #rm "#{prefix}/lib/python2.7/site-packages/site.py"
   end
 
   def test
