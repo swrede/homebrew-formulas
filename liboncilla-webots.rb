@@ -24,7 +24,7 @@ class LiboncillaWebots < Formula
     args = std_cmake_args 
     # + %W[-DBREW_BUILD=1]
 
-    system "cmake", ".", *args
+    system "cmake", ".", "-DWEBOTS_ROOT_DIR=/Applications", *args
     system "make install" # if this fails, try separate make/make install steps
   end
 
